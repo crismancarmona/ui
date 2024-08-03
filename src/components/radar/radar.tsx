@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Plane } from 'types/dist/domain/plane';
 import { PlaneState } from 'types/dist/domain/plane-state';
 
-const Radar: React.FC = () => {
-  const [planes, setPlanes] = useState<Plane[]>([]);
+interface RadarParams {
+  planes: Plane[];
+}
 
-  useEffect(() => {
-    const fetchPlanes = async () => {
-      const planesStatusesResponse = await fetch(
-        'http://localhost:3000/status',
-      );
-      setPlanes(await planesStatusesResponse.json());
-    };
-
-    const intervalId = setInterval(() => {
-      fetchPlanes(); // Fetch data every second
-    }, 1000); // 1000 milliseconds = 1 second
-
-    return () => {
-      clearInterval(intervalId); // Clear interval on component unmount
-    };
-  }, []);
-
+const Radar: React.FC<RadarParams> = ({ planes }) => {
   const radius = 500; // Radio del radar
   const center = radius;
 
@@ -90,7 +75,19 @@ const Radar: React.FC = () => {
             strokeWidth="1"
             fill="none"
           />
-          <circle cx={center} cy={center} r={5} fill="red" /> {/* Centro */}
+          <circle cx={center} cy={center} r={5} fill="red" z="2" />{' '}
+          {/* Centro */}
+          <line
+            cx={center}
+            cy={center}
+            stroke="black"
+            strokeWidth={1}
+            x1={center}
+            y1={center}
+            x2={center + 100}
+            y2={center}
+            z="1"
+          ></line>
           {points.map((point, index) => (
             <g>
               {drawArrow(

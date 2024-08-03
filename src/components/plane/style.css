@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  gap: 8px;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.column:first-child {
+  background-color: #f4f4f4;
+}
+
+.column:last-child {
+  background-color: #e2e2e2;
+}
