@@ -97,18 +97,13 @@ const Radar: React.FC<RadarParams> = ({ planes }) => {
               )}
 
               <text
-                x={(point.stats.x ?? 0) + 25}
-                y={point.stats.y ?? 0}
+                x={(point.stats.x ?? 0) + 23}
+                y={(point.stats.y ?? 0) - 5}
                 fill="black"
                 fontSize="12"
                 dominantBaseline="middle"
               >
-                {point.numberId +
-                  ' Alt:' +
-                  point.stats.z +
-                  'm - Vel:' +
-                  point.stats.velocity +
-                  'km/h'}
+                {`${point.numberId} ${point.stats.angle}° Alt:${point.stats.z}m - Vel:${point.stats.velocity}km/h`}
               </text>
             </g>
           ))}
