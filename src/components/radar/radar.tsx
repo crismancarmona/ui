@@ -1,6 +1,5 @@
+import { Plane, PlaneState } from '@crisman999/plane-types';
 import React from 'react';
-import { Plane } from 'types/dist/domain/plane';
-import { PlaneState } from 'types/dist/domain/plane-state';
 
 interface RadarParams {
   planes: Plane[];

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Radar from '@/components/radar/radar';
-import { Plane } from 'types/dist/domain/plane';
 import Planes from '@/components/plane/plane';
+import Radar from '@/components/radar/radar';
+import { Plane } from '@crisman999/plane-types';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 
 const RadarPage: React.FC = () => {

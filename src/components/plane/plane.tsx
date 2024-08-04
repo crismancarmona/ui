@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plane } from 'types/dist/domain/plane';
+import { Plane } from '@crisman999/plane-types';
 import './style.css';
 
 interface PlanesParams {

@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
+"@crisman999/plane-types@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@crisman999/plane-types/-/plane-types-0.1.1.tgz#23fdd26c44a98005c2e8fcb2854b8aa6ebd2b549"
+  integrity sha512-mb4ehAn8dWc6HMxm2k3G5jdOXOoVAxvEO0LAzk+E1liQtaguZCTC0eG0RXSALS3qwsLnatLaOqpYY3R1cpflmA==
+
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
@@ -2627,9 +2632,6 @@ typed-array-length@^1.0.6:
     has-proto "^1.0.3"
     is-typed-array "^1.1.13"
     possible-typed-array-names "^1.0.0"
-
-"types@file:../plane-types":
-  version "0.0.1"
 
 typescript@^5:
   version "5.5.4"
