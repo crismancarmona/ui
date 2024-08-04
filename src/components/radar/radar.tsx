@@ -52,8 +52,8 @@ const Radar: React.FC<RadarParams> = ({ planes }) => {
 
     return (
       <>
-        <line x1={cx} y1={cy} x2={x1} y2={y1} stroke="blue" strokeWidth="2" />
-        <polygon points={`${x1},${y1} ${x2},${y2} ${x3},${y3}`} fill="blue" />
+        <line x1={cx} y1={cy} x2={x1} y2={y1} stroke="yellow" strokeWidth="2" />
+        <polygon points={`${x1},${y1} ${x2},${y2} ${x3},${y3}`} fill="yellow" />
       </>
     );
   };
@@ -67,6 +67,27 @@ const Radar: React.FC<RadarParams> = ({ planes }) => {
           viewBox={`0 0 ${radius * 2} ${radius * 2}`}
           style={{ border: '1px solid black' }}
         >
+          <defs>
+            <pattern
+              id="backgroundPattern"
+              patternUnits="userSpaceOnUse"
+              width={radius * 2}
+              height={radius * 2}
+            >
+              <image
+                href="/images/josemaria.png"
+                x="0"
+                y="0"
+                width={radius * 2}
+                height={radius * 2}
+              />
+            </pattern>
+          </defs>
+          <rect
+            width="100%"
+            height="100%"
+            fill="url(#backgroundPattern)"
+          ></rect>
           <circle
             cx={center}
             cy={center}
@@ -82,9 +103,9 @@ const Radar: React.FC<RadarParams> = ({ planes }) => {
             cy={center}
             stroke="black"
             strokeWidth={1}
-            x1={center}
+            x1={center - 90}
             y1={center}
-            x2={center + 100}
+            x2={center + 70}
             y2={center}
             z="1"
           ></line>
@@ -99,8 +120,8 @@ const Radar: React.FC<RadarParams> = ({ planes }) => {
               <text
                 x={(point.stats.x ?? 0) + 23}
                 y={(point.stats.y ?? 0) - 5}
-                fill="black"
-                fontSize="12"
+                fill="white"
+                fontSize="16"
                 dominantBaseline="middle"
               >
                 {`${point.numberId} ${point.stats.angle}° Alt:${point.stats.z}m - Vel:${point.stats.velocity}km/h`}
